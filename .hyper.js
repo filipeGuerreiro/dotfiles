@@ -150,13 +150,13 @@ module.exports = {
   //   `project#1.0.1`
   plugins: [
     "hyper-font-ligatures",
-    "hyper-solarized-light",
     "hyper-search",
     "hyper-pane",
     "hypercwd",
     "hyperline",
     "hyper-save-windowstate",
-    "gitrocket"
+    "gitrocket",
+    "hyper-material-theme"
   ],
 
   // in development, you can create a directory under

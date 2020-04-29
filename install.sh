@@ -25,3 +25,7 @@ $package_manager_install_cmd hyper
 $package_manager_install_cmd starship
 $package_manager_install_cmd ttf-fira-code
 
+# add suggestions + syntax highlighting
+cd ~/.zsh
+git clone git@github.com:zdharma/fast-syntax-highlighting.git
+git clone git@github.com:zsh-users/zsh-autosuggestions.git

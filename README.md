@@ -17,5 +17,15 @@ starship
 firacode font
 ```
 
+## Requirements
+```
+git
+
+one of these package managers:
+- apt-get
+- yay
+- brew
+```
+
 ## TODO
 - Write a makefile to install the dependencies and copy over the configuration files

@@ -14,6 +14,7 @@ A combination of zsh + hyper.js + spaceship to add suggestion/autocompletion/ext
 zsh
 hyper
 starship
+firacode font
 ```
 
 ## TODO

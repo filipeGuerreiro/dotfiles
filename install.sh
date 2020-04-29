@@ -23,4 +23,5 @@ fi
 $package_manager_install_cmd zsh
 $package_manager_install_cmd hyper
 $package_manager_install_cmd starship
+$package_manager_install_cmd ttf-fira-code
 

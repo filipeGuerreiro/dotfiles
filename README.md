@@ -26,6 +26,3 @@ one of these package managers:
 - yay
 - brew
 ```
-
-## TODO
-- Write a makefile to install the dependencies and copy over the configuration files

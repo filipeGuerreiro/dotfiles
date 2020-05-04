@@ -1,4 +1,5 @@
-export PATH="/usr/local/opt/mysql-client/bin:~/.emacs.d/bin:/usr/local/opt/gettext/bin:/usr/local/opt/openjdk/bin:$PATH"
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+export PATH="/usr/local/opt/mysql-client/bin:~/.emacs.d/bin:/usr/local/opt/gettext/bin:$JAVA_HOME/bin:$PATH"
 
 alias python="/usr/local/bin/python3"
 
@@ -24,7 +25,7 @@ fi
 
 # Enhanced form of menu completion called `menu selection'
 zmodload -i zsh/complist
-source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $HOME/.zsh/history.zsh
-source $HOME/.zsh/key-bindings.zsh
-source $HOME/.zsh/aliases.zsh
+source /Users/JP27322/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /Users/JP27322/.zsh/history.zsh
+source /Users/JP27322/.zsh/key-bindings.zsh
+source /Users/JP27322/.zsh/aliases.zsh

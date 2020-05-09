@@ -1,8 +1,6 @@
 #!/bin/bash
 
-# move zsh config over 
 cd "$(dirname "$0")"
-cp zsh/* ~/
 
 # get system's package manager
 package_manager_install_cmd=""
@@ -25,7 +23,11 @@ $package_manager_install_cmd hyper
 $package_manager_install_cmd starship
 $package_manager_install_cmd ttf-fira-code
 
+
+cp -r zsh/. ~/
+
 # add suggestions + syntax highlighting
+mkdir ~/.zsh
 cd ~/.zsh
 git clone git@github.com:zdharma/fast-syntax-highlighting.git
 git clone git@github.com:zsh-users/zsh-autosuggestions.git

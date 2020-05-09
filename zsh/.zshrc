@@ -25,7 +25,8 @@ fi
 
 # Enhanced form of menu completion called `menu selection'
 zmodload -i zsh/complist
-source /Users/JP27322/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /Users/JP27322/.zsh/history.zsh
-source /Users/JP27322/.zsh/key-bindings.zsh
-source /Users/JP27322/.zsh/aliases.zsh
+source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOME/.zsh/history.zsh
+source $HOME/.zsh/key-bindings.zsh
+source $HOME/.zsh/aliases.zsh
+

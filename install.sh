@@ -50,3 +50,9 @@ if [[ "$OSTYPE" =~ ^darwin ]]; then jdk8_install_path="$jdk8_install_path/Conten
 
 # install python
 $package_manager_install_cmd python
+
+# utilities
+$package_manager_install_cmd pgcli
+$package_manager_install_cmd npm
+npm install -g tldr
+npm install -g fkill-cli

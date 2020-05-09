@@ -1,6 +1,8 @@
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+
 alias python="/usr/local/bin/python3"
 
 # Set Spaceship ZSH as a prompt
@@ -8,8 +10,7 @@ autoload -U promptinit; promptinit
 prompt spaceship
 
 source $HOME/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-
-# Load completion config
+source $(dirname $(gem which colorls))/tab_complete.sh
 source $HOME/.zsh/completion.zsh
 
 # Initialize the completion system
@@ -22,6 +23,12 @@ if [ $(date +'%j') != $updated_at ]; then
 else
   compinit -C -i
 fi
+
+# Uses the zsh precmd function hook to set the tab title to the current working directory before each prompt
+function precmd () {
+    window_title="\\033]0;${PWD##*/}\\007"
+    echo -ne "$window_title"
+}
 
 # Enhanced form of menu completion called `menu selection'
 zmodload -i zsh/complist

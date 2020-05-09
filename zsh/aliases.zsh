@@ -1,4 +1,7 @@
-alias ls='pwd; ls -G'                              # colorize `ls` output
+alias ls='exa -ahl -s type'                             # colorize `ls` output
+alias cat='bat'
+alias find='fd'
+alias man='tldr'
 alias zshreload='source ~/.zshrc'             # reload ZSH
 alias shtop='sudo htop'                       # run `htop` with root rights
 alias grep='grep --color=auto'                # colorize `grep` output

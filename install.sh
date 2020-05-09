@@ -1,5 +1,9 @@
 #!/bin/bash
-cd "$(dirname "$0")"
+this_dir="$(dirname "$0")"
+cd $this_dir
+
+# cross-platform package manager
+curl -L https://nixos.org/nix/install | sh
 
 # get system's package manager
 package_manager_install_cmd=""
@@ -53,6 +57,12 @@ $package_manager_install_cmd python
 
 # utilities
 $package_manager_install_cmd pgcli
+$package_manager_install_cmd exa
+$package_manager_install_cmd bat
+$package_manager_install_cmd fd
+
+$package_manager_install_cmd ruby
+
 $package_manager_install_cmd npm
 npm install -g tldr
 npm install -g fkill-cli

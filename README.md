@@ -15,12 +15,13 @@ zsh
 hyper
 starship
 firacode font
+
+java - managed under jenv (for several versions)
+python
 ```
 
 ## Requirements
 ```
-git
-
 one of these package managers:
 - apt-get
 - yay

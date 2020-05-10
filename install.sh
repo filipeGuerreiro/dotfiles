@@ -3,6 +3,7 @@ this_dir="$(dirname "$0")"
 cd $this_dir
 
 # cross-platform package manager
+# TODO: doesn't work on macOS catalina for now (2020-05-10)
 curl -L https://nixos.org/nix/install | sh
 
 # get system's package manager

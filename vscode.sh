@@ -1,6 +1,7 @@
 #!/bin/bash
 # code --list-extensions | xargs -L 1 echo code --install-extension
 code --install-extension aaron-bond.better-comments
+code --install-extension alexcvzz.vscode-sqlite
 code --install-extension alygin.vscode-tlaplus
 code --install-extension bbenoist.Nix
 code --install-extension BeardedBear.beardedtheme
@@ -20,9 +21,12 @@ code --install-extension octref.vetur
 code --install-extension rebornix.ruby
 code --install-extension redhat.java
 code --install-extension redhat.vscode-yaml
+code --install-extension rust-lang.rust
 code --install-extension scala-lang.scala
 code --install-extension scalameta.metals
 code --install-extension sdras.vue-vscode-snippets
+code --install-extension serayuzgur.crates
+code --install-extension vadimcn.vscode-lldb
 code --install-extension VisualStudioExptTeam.vscodeintellicode
 code --install-extension vscjava.vscode-java-debug
 code --install-extension vscjava.vscode-java-dependency

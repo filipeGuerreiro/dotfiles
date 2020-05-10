@@ -1,0 +1,35 @@
+#!/bin/bash
+# code --list-extensions | xargs -L 1 echo code --install-extension
+code --install-extension aaron-bond.better-comments
+code --install-extension alygin.vscode-tlaplus
+code --install-extension bbenoist.Nix
+code --install-extension BeardedBear.beardedtheme
+code --install-extension betterthantomorrow.calva
+code --install-extension borkdude.clj-kondo
+code --install-extension codezombiech.gitignore
+code --install-extension eamodio.gitlens
+code --install-extension EditorConfig.EditorConfig
+code --install-extension esbenp.prettier-vscode
+code --install-extension formulahendry.code-runner
+code --install-extension GitHub.vscode-pull-request-github
+code --install-extension hollowtree.vue-snippets
+code --install-extension ms-azuretools.vscode-docker
+code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
+code --install-extension ms-python.python
+code --install-extension octref.vetur
+code --install-extension rebornix.ruby
+code --install-extension redhat.java
+code --install-extension redhat.vscode-yaml
+code --install-extension scala-lang.scala
+code --install-extension scalameta.metals
+code --install-extension sdras.vue-vscode-snippets
+code --install-extension VisualStudioExptTeam.vscodeintellicode
+code --install-extension vscjava.vscode-java-debug
+code --install-extension vscjava.vscode-java-dependency
+code --install-extension vscjava.vscode-java-pack
+code --install-extension vscjava.vscode-java-test
+code --install-extension vscjava.vscode-maven
+code --install-extension vscode-icons-team.vscode-icons
+code --install-extension vscoss.vscode-ansible
+code --install-extension wingrunr21.vscode-ruby
+code --install-extension zxh404.vscode-proto3

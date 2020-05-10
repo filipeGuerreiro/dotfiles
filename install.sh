@@ -52,17 +52,21 @@ if [[ "$OSTYPE" =~ ^darwin ]]; then jdk8_install_path="$jdk8_install_path/Conten
 ~/.jenv/bin/jenv add $jdk11_install_path
 ~/.jenv/binjenv global 11.0
 
-# install python
+# install development tools
 $package_manager_install_cmd python
+$package_manager_install_cmd ruby
+$package_manager_install_cmd npm
 
-# utilities
+# terminal utilities
 $package_manager_install_cmd pgcli
 $package_manager_install_cmd exa
 $package_manager_install_cmd bat
 $package_manager_install_cmd fd
-
-$package_manager_install_cmd ruby
-
-$package_manager_install_cmd npm
 npm install -g tldr
 npm install -g fkill-cli
+
+# vscode
+$package_manager_install_cmd vscodium
+./vscode.sh
+vscode_dir="$(find / -name 'VSCodium' 2>/dev/null | head -n 1)/User/"
+cp vscode/settings.json $vscode_dir

@@ -1,0 +1,27 @@
+{
+    "workbench.colorTheme": "BeardedTheme Solarized Light",
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.sideBar.location": "right",
+    "window.newWindowDimensions": "maximized",
+    "editor.formatOnPaste": true,
+    "editor.defaultFormatter": "EditorConfig.EditorConfig",
+    "editor.formatOnSave": true,
+    "files.autoSave": "afterDelay",
+    "vsicons.dontShowNewVersionMessage": true,
+    "sync.autoUpload": false,
+    "sync.autoDownload": true,
+    "python.jediEnabled": false,
+    "editor.cursorStyle": "block",
+    "git.autofetch": true,
+    "workbench.fontAliasing": "antialiased",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "java.semanticHighlighting.enabled": true,
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "java.requirements.JDK11Warning": false
+}

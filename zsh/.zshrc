@@ -10,7 +10,6 @@ autoload -U promptinit; promptinit
 prompt spaceship
 
 source $HOME/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-source $(dirname $(gem which colorls))/tab_complete.sh
 source $HOME/.zsh/completion.zsh
 
 # Initialize the completion system

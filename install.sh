@@ -58,6 +58,12 @@ $package_manager_install_cmd python
 $package_manager_install_cmd ruby
 $package_manager_install_cmd npm
 
+# vscode
+$package_manager_install_cmd vscodium
+./vscode.sh
+vscode_dir="$(find / -name 'VSCodium' 2>/dev/null | head -n 1)/User/"
+cp vscode/settings.json $vscode_dir
+
 # terminal utilities
 $package_manager_install_cmd pgcli
 $package_manager_install_cmd exa
@@ -65,9 +71,3 @@ $package_manager_install_cmd bat
 $package_manager_install_cmd fd
 npm install -g tldr
 npm install -g fkill-cli
-
-# vscode
-$package_manager_install_cmd vscodium
-./vscode.sh
-vscode_dir="$(find / -name 'VSCodium' 2>/dev/null | head -n 1)/User/"
-cp vscode/settings.json $vscode_dir

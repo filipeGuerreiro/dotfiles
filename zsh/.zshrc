@@ -5,10 +5,6 @@ export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 alias python="/usr/local/bin/python3"
 
-# Set Spaceship ZSH as a prompt
-autoload -U promptinit; promptinit
-prompt spaceship
-
 source $HOME/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source $HOME/.zsh/completion.zsh
 
@@ -36,3 +32,5 @@ source $HOME/.zsh/history.zsh
 source $HOME/.zsh/key-bindings.zsh
 source $HOME/.zsh/aliases.zsh
 
+# Set Spaceship ZSH as a prompt
+eval "$(starship init zsh)"

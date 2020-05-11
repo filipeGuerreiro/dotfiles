@@ -1,39 +1,39 @@
 #!/bin/bash
-# code --list-extensions | xargs -L 1 echo code --install-extension
-code --install-extension aaron-bond.better-comments
-code --install-extension alexcvzz.vscode-sqlite
-code --install-extension alygin.vscode-tlaplus
-code --install-extension bbenoist.Nix
-code --install-extension BeardedBear.beardedtheme
-code --install-extension betterthantomorrow.calva
-code --install-extension borkdude.clj-kondo
-code --install-extension codezombiech.gitignore
-code --install-extension eamodio.gitlens
-code --install-extension EditorConfig.EditorConfig
-code --install-extension esbenp.prettier-vscode
-code --install-extension formulahendry.code-runner
-code --install-extension GitHub.vscode-pull-request-github
-code --install-extension hollowtree.vue-snippets
-code --install-extension ms-azuretools.vscode-docker
-code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
-code --install-extension ms-python.python
-code --install-extension octref.vetur
-code --install-extension rebornix.ruby
-code --install-extension redhat.java
-code --install-extension redhat.vscode-yaml
-code --install-extension rust-lang.rust
-code --install-extension scala-lang.scala
-code --install-extension scalameta.metals
-code --install-extension sdras.vue-vscode-snippets
-code --install-extension serayuzgur.crates
-code --install-extension vadimcn.vscode-lldb
-code --install-extension VisualStudioExptTeam.vscodeintellicode
-code --install-extension vscjava.vscode-java-debug
-code --install-extension vscjava.vscode-java-dependency
-code --install-extension vscjava.vscode-java-pack
-code --install-extension vscjava.vscode-java-test
-code --install-extension vscjava.vscode-maven
-code --install-extension vscode-icons-team.vscode-icons
-code --install-extension vscoss.vscode-ansible
-code --install-extension wingrunr21.vscode-ruby
-code --install-extension zxh404.vscode-proto3
+# code --list-extensions | xargs -L 1 echo code --install-extension --force
+code --install-extension aaron-bond.better-comments --force
+code --install-extension alexcvzz.vscode-sqlite --force
+code --install-extension alygin.vscode-tlaplus --force
+code --install-extension bbenoist.Nix --force
+code --install-extension BeardedBear.beardedtheme --force
+code --install-extension betterthantomorrow.calva --force
+code --install-extension borkdude.clj-kondo --force
+code --install-extension codezombiech.gitignore --force
+code --install-extension eamodio.gitlens --force
+code --install-extension EditorConfig.EditorConfig --force
+code --install-extension esbenp.prettier-vscode --force
+code --install-extension formulahendry.code-runner --force
+code --install-extension GitHub.vscode-pull-request-github --force
+code --install-extension hollowtree.vue-snippets --force
+code --install-extension ms-azuretools.vscode-docker --force
+code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools --force
+code --install-extension ms-python.python --force
+code --install-extension octref.vetur --force
+code --install-extension rebornix.ruby --force
+code --install-extension redhat.java --force
+code --install-extension redhat.vscode-yaml --force
+code --install-extension rust-lang.rust --force
+code --install-extension scala-lang.scala --force
+code --install-extension scalameta.metals --force
+code --install-extension sdras.vue-vscode-snippets --force
+code --install-extension serayuzgur.crates --force
+code --install-extension vadimcn.vscode-lldb --force
+code --install-extension VisualStudioExptTeam.vscodeintellicode --force
+code --install-extension vscjava.vscode-java-debug --force
+code --install-extension vscjava.vscode-java-dependency --force
+code --install-extension vscjava.vscode-java-pack --force
+code --install-extension vscjava.vscode-java-test --force
+code --install-extension vscjava.vscode-maven --force
+code --install-extension vscode-icons-team.vscode-icons --force
+code --install-extension vscoss.vscode-ansible --force
+code --install-extension wingrunr21.vscode-ruby --force
+code --install-extension zxh404.vscode-proto3 --force

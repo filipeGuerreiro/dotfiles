@@ -15,15 +15,16 @@ echo 'LABEL=Nix /nix apfs rw' | sudo tee -a /etc/fstab"
     exit 0
   fi
 fi
-if command -v nix >/dev/null 2>&1; then
+if ! command -v nix >/dev/null 2>&1; then
   sh <(curl https://nixos.org/nix/install) --daemon
+fi
 
 # get system's package manager
 package_manager_install_cmd=""
 if command -v pacman >/dev/null 2>&1; then
   package_manager_install_cmd="yay -S --cleanafter --noconfirm "
 elif command -v brew >/dev/null 2>&1; then
-  package_manager_install_cmd="brew install "
+  package_manager_install_cmd="brew cask install "
 elif command -v apt-get >/dev/null 2>&1; then
   package_manager_install_cmd="sudo apt-get install -y "
 else

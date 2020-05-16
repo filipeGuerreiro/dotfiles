@@ -12,6 +12,7 @@ sudo diskutil apfs addVolume disk1 APFSX Nix -mountpoint /nix
 sudo diskutil enableOwnership /nix
 sudo chflags hidden /nix  # Don't show the Nix volume on the desktop
 echo 'LABEL=Nix /nix apfs rw' | sudo tee -a /etc/fstab"
+    exit 0
   fi
 fi
 if command -v nix >/dev/null 2>&1; then

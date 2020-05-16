@@ -1,3 +1,4 @@
+#!/bin/zsh
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
@@ -7,6 +8,10 @@ alias python="/usr/local/bin/python3"
 
 source $HOME/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source $HOME/.zsh/completion.zsh
+
+if [[ "$OSTYPE" =~ ^darwin ]]; then
+  launchctl load /Library/LaunchDaemons/org.nixos.nix-daemon.plist && launchctl start org.nixos.nix-daemon
+fi
 
 # Initialize the completion system
 autoload -Uz compinit

@@ -15,7 +15,7 @@ echo 'LABEL=Nix /nix apfs rw' | sudo tee -a /etc/fstab"
   fi
 fi
 if command -v nix >/dev/null 2>&1; then
-  curl -L https://nixos.org/nix/install | sh
+  sh <(curl https://nixos.org/nix/install) --daemon
 
 # get system's package manager
 package_manager_install_cmd=""
@@ -44,7 +44,6 @@ mkdir ~/.zsh
 cd ~/.zsh
 git clone git@github.com:zdharma/fast-syntax-highlighting.git
 git clone git@github.com:zsh-users/zsh-autosuggestions.git
-
 
 # install java
 git clone https://github.com/gcuisinier/jenv.git ~/.jenv

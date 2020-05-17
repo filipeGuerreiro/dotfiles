@@ -17,6 +17,8 @@ echo 'LABEL=Nix /nix apfs rw' | sudo tee -a /etc/fstab"
 fi
 if ! command -v nix >/dev/null 2>&1; then
   sh <(curl https://nixos.org/nix/install) --daemon
+  mkdir -p ~/.config/nixpkgs
+  cp nix/config.nix ~/.config/nixpkgs/config.nix
 fi
 
 # get system's package manager

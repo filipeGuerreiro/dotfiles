@@ -38,3 +38,4 @@ code --install-extension vscoss.vscode-ansible --force
 code --install-extension wingrunr21.vscode-ruby --force
 code --install-extension zxh404.vscode-proto3 --force
 code --install-extension tabnine.tabnine-vscode --force
+code --install-extension wakatime.vscode-wakatime --force

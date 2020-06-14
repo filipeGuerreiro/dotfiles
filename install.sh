@@ -13,6 +13,8 @@ elif command -v apt-get >/dev/null 2>&1; then
   wget -qO – https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg | sudo apt-key add –
   sudo add-apt-repository 'deb https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/repos/debs/ vscodium main'
   sudo add-apt-repository ppa:linrunner/tlp
+  wget -qO - https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | sudo apt-key add -
+  sudo add-apt-repository --yes https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/
   sudo apt update
 else
   { echo >&2 "A supported package manager (apt-get, yay, brew) is required.  Aborting."; exit 1; }

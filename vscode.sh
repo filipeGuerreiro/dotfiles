@@ -1,41 +1,49 @@
 #!/bin/bash
+
+codium=""
+if command -v code >/dev/null 2>&1; then
+  codium="code"
+elif command -v codium >/dev/null 2>&1; then
+  codium="codium"
+fi
+
 # code --list-extensions | xargs -L 1 echo code --install-extension --force
-code --install-extension aaron-bond.better-comments --force
-code --install-extension alexcvzz.vscode-sqlite --force
-code --install-extension alygin.vscode-tlaplus --force
-code --install-extension bbenoist.Nix --force
-code --install-extension BeardedBear.beardedtheme --force
-code --install-extension betterthantomorrow.calva --force
-code --install-extension borkdude.clj-kondo --force
-code --install-extension codezombiech.gitignore --force
-code --install-extension eamodio.gitlens --force
-code --install-extension EditorConfig.EditorConfig --force
-code --install-extension esbenp.prettier-vscode --force
-code --install-extension formulahendry.code-runner --force
-code --install-extension GitHub.vscode-pull-request-github --force
-code --install-extension hollowtree.vue-snippets --force
-code --install-extension ms-azuretools.vscode-docker --force
-code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools --force
-code --install-extension ms-python.python --force
-code --install-extension octref.vetur --force
-code --install-extension rebornix.ruby --force
-code --install-extension redhat.java --force
-code --install-extension redhat.vscode-yaml --force
-code --install-extension rust-lang.rust --force
-code --install-extension scala-lang.scala --force
-code --install-extension scalameta.metals --force
-code --install-extension sdras.vue-vscode-snippets --force
-code --install-extension serayuzgur.crates --force
-code --install-extension vadimcn.vscode-lldb --force
-code --install-extension VisualStudioExptTeam.vscodeintellicode --force
-code --install-extension vscjava.vscode-java-debug --force
-code --install-extension vscjava.vscode-java-dependency --force
-code --install-extension vscjava.vscode-java-pack --force
-code --install-extension vscjava.vscode-java-test --force
-code --install-extension vscjava.vscode-maven --force
-code --install-extension vscode-icons-team.vscode-icons --force
-code --install-extension vscoss.vscode-ansible --force
-code --install-extension wingrunr21.vscode-ruby --force
-code --install-extension zxh404.vscode-proto3 --force
-code --install-extension tabnine.tabnine-vscode --force
-code --install-extension wakatime.vscode-wakatime --force
+$codium --install-extension aaron-bond.better-comments --force
+$codium --install-extension alexcvzz.vscode-sqlite --force
+$codium --install-extension alygin.vscode-tlaplus --force
+$codium --install-extension bbenoist.Nix --force
+$codium --install-extension BeardedBear.beardedtheme --force
+$codium --install-extension betterthantomorrow.calva --force
+$codium --install-extension borkdude.clj-kondo --force
+$codium --install-extension codezombiech.gitignore --force
+$codium --install-extension eamodio.gitlens --force
+$codium --install-extension EditorConfig.EditorConfig --force
+$codium --install-extension esbenp.prettier-vscode --force
+$codium --install-extension formulahendry.code-runner --force
+$codium --install-extension GitHub.vscode-pull-request-github --force
+$codium --install-extension hollowtree.vue-snippets --force
+$codium --install-extension ms-azuretools.vscode-docker --force
+$codium --install-extension ms-kubernetes-tools.vscode-kubernetes-tools --force
+$codium --install-extension ms-python.python --force
+$codium --install-extension octref.vetur --force
+$codium --install-extension rebornix.ruby --force
+$codium --install-extension redhat.java --force
+$codium --install-extension redhat.vscode-yaml --force
+$codium --install-extension rust-lang.rust --force
+$codium --install-extension scala-lang.scala --force
+$codium --install-extension scalameta.metals --force
+$codium --install-extension sdras.vue-vscode-snippets --force
+$codium --install-extension serayuzgur.crates --force
+$codium --install-extension vadimcn.vscode-lldb --force
+$codium --install-extension VisualStudioExptTeam.vscodeintellicode --force
+$codium --install-extension vscjava.vscode-java-debug --force
+$codium --install-extension vscjava.vscode-java-dependency --force
+$codium --install-extension vscjava.vscode-java-pack --force
+$codium --install-extension vscjava.vscode-java-test --force
+$codium --install-extension vscjava.vscode-maven --force
+$codium --install-extension vscode-icons-team.vscode-icons --force
+$codium --install-extension vscoss.vscode-ansible --force
+$codium --install-extension wingrunr21.vscode-ruby --force
+$codium --install-extension zxh404.vscode-proto3 --force
+$codium --install-extension tabnine.tabnine-vscode --force
+$codium --install-extension wakatime.vscode-wakatime --force

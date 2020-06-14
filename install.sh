@@ -2,25 +2,6 @@
 this_dir="$(dirname "$0")"
 cd $this_dir
 
-# cross-platform package manager
-# workaround for installing on macOS catalina for now: https://github.com/NixOS/nix/issues/2925#issuecomment-539570232
-if [ ! -d "/nix" ]; then
-  if [[ "$OSTYPE" =~ ^darwin ]]; then
-    echo 'nix' | sudo tee -a /etc/synthetic.conf
-    echo "# after reboot, execute this script
-sudo diskutil apfs addVolume disk1 APFSX Nix -mountpoint /nix
-sudo diskutil enableOwnership /nix
-sudo chflags hidden /nix  # Don't show the Nix volume on the desktop
-echo 'LABEL=Nix /nix apfs rw' | sudo tee -a /etc/fstab"
-    exit 0
-  fi
-fi
-if ! command -v nix >/dev/null 2>&1; then
-  sh <(curl https://nixos.org/nix/install) --daemon
-  mkdir -p ~/.config/nixpkgs
-  cp nix/config.nix ~/.config/nixpkgs/config.nix
-fi
-
 # get system's package manager
 package_manager_install_cmd=""
 if command -v pacman >/dev/null 2>&1; then
@@ -29,6 +10,9 @@ elif command -v brew >/dev/null 2>&1; then
   package_manager_install_cmd="brew cask install "
 elif command -v apt-get >/dev/null 2>&1; then
   package_manager_install_cmd="sudo apt-get install -y "
+  wget -qO – https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg | sudo apt-key add –
+  sudo add-apt-repository 'deb https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/repos/debs/ vscodium main'
+  sudo apt update
 else
   { echo >&2 "A supported package manager (apt-get, yay, brew) is required.  Aborting."; exit 1; }
 fi
@@ -81,7 +65,7 @@ if ! command -v npm >/dev/null 2>&1; then $package_manager_install_cmd npm; fi
 
 # vscode
 if ! command -v code >/dev/null 2>&1; then
-  $package_manager_install_cmd vscodium
+  $package_manager_install_cmd codium
   chmod +x vscode.sh
   ./vscode.sh
   vscode_dir="$(find / -name 'VSCodium' 2>/dev/null | head -n 1)/User/"

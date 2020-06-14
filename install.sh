@@ -2,6 +2,10 @@
 this_dir="$(dirname "$0")"
 cd $this_dir
 
+# Make sure to use zsh
+chsh -s /bin/zsh
+/bin/zsh
+
 # get system's package manager
 package_manager_install_cmd=""
 if command -v pacman >/dev/null 2>&1; then
@@ -30,7 +34,7 @@ if ! command -v starship >/dev/null 2>&1; then
   $package_manager_install_cmd ttf-fira-code
 fi
 
-cp -r zsh/. ~/
+cp -r zsh/. ~/.zsh/
 
 # add suggestions + syntax highlighting
 mkdir ~/.zsh

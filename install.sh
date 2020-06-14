@@ -69,14 +69,17 @@ if ! command -v npm >/dev/null 2>&1; then $package_manager_install_cmd npm; fi
 # vscode
 if ! command -v code >/dev/null 2>&1; then
   $package_manager_install_cmd codium
-  chmod +x vscode.sh
-  ./vscode.sh
+  chmod +x vscode/install_extensions.sh
+  ./vscode/install_extensions.sh
   vscode_dir="$(find / -name 'VSCodium' 2>/dev/null | head -n 1)/User/"
   cp vscode/settings.json $vscode_dir
 fi
 
 # power-saving utilities for laptops
 $package_manager_install_cmd tlp tlp-rdw powertop
+
+$package_manager_install_cmd redshift
+cp redshift/redshift.conf ~/.config/redshift.conf
 
 # terminal utilities
 if ! command -v pgcli >/dev/null 2>&1; then $package_manager_install_cmd pgcli; fi

@@ -98,3 +98,6 @@ if ! command -v bat >/dev/null 2>&1; then $package_manager_install_cmd bat; fi
 if ! command -v fd >/dev/null 2>&1; then $package_manager_install_cmd fd; fi
 if ! command -v tldr >/dev/null 2>&1; then npm install -g tldr; fi
 if ! command -v fkill >/dev/null 2>&1; then npm install -g fkill-cli; fi
+
+# media software
+$package_manager_install_cmd vlc

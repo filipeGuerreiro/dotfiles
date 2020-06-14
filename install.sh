@@ -80,6 +80,8 @@ fi
 
 # power-saving utilities for laptops
 $package_manager_install_cmd tlp tlp-rdw powertop
+chmod +x power/savings_setup.sh
+./power/savings_setup.sh
 
 # blue-light filter
 $package_manager_install_cmd redshift

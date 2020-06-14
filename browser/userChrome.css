@@ -37,7 +37,7 @@
  *  Minimal theme
  */
 #navigator-toolbox {
-    font-family: 'Menlo' !important;
+    font-family: 'Menlo', 'Fira Code', 'Ubuntu Mono', 'Consolas' !important;
     border-bottom: 1px;
     border-bottom-color: #93a1a1 !important;
 }

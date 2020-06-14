@@ -72,6 +72,7 @@ $package_manager_install_cmd docker
 if ! command -v python >/dev/null 2>&1; then $package_manager_install_cmd python; fi
 if ! command -v ruby >/dev/null 2>&1; then $package_manager_install_cmd ruby; fi
 if ! command -v npm >/dev/null 2>&1; then $package_manager_install_cmd npm; fi
+if ! command -v cargo >/dev/null 2>&1; then $package_manager_install_cmd cargo; fi
 
 # vscode
 if ! command -v code >/dev/null 2>&1; then
@@ -84,8 +85,6 @@ fi
 
 # power-saving utilities for laptops
 $package_manager_install_cmd tlp tlp-rdw powertop
-chmod +x power/savings_setup.sh
-./power/savings_setup.sh
 
 # blue-light filter
 $package_manager_install_cmd redshift

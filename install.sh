@@ -61,6 +61,9 @@ if ! command -v jenv >/dev/null 2>&1; then
   ~/.jenv/binjenv global 11.0
 fi
 
+# install docker
+$package_manager_install_cmd docker
+
 # install development tools
 if ! command -v python >/dev/null 2>&1; then $package_manager_install_cmd python; fi
 if ! command -v ruby >/dev/null 2>&1; then $package_manager_install_cmd ruby; fi
@@ -78,6 +81,7 @@ fi
 # power-saving utilities for laptops
 $package_manager_install_cmd tlp tlp-rdw powertop
 
+# blue-light filter
 $package_manager_install_cmd redshift
 cp redshift/redshift.conf ~/.config/redshift.conf
 

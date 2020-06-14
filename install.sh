@@ -12,6 +12,7 @@ elif command -v apt-get >/dev/null 2>&1; then
   package_manager_install_cmd="sudo apt-get install -y "
   wget -qO – https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg | sudo apt-key add –
   sudo add-apt-repository 'deb https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/repos/debs/ vscodium main'
+  sudo add-apt-repository ppa:linrunner/tlp
   sudo apt update
 else
   { echo >&2 "A supported package manager (apt-get, yay, brew) is required.  Aborting."; exit 1; }
@@ -71,6 +72,9 @@ if ! command -v code >/dev/null 2>&1; then
   vscode_dir="$(find / -name 'VSCodium' 2>/dev/null | head -n 1)/User/"
   cp vscode/settings.json $vscode_dir
 fi
+
+# power-saving utilities for laptops
+$package_manager_install_cmd tlp tlp-rdw powertop
 
 # terminal utilities
 if ! command -v pgcli >/dev/null 2>&1; then $package_manager_install_cmd pgcli; fi

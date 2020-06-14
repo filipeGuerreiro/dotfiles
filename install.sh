@@ -3,8 +3,8 @@ this_dir="$(dirname "$0")"
 cd $this_dir
 
 # Make sure to use zsh
-chsh -s /bin/zsh
-/bin/zsh
+chsh -s $(which zsh)
+$(which zsh)
 
 # get system's package manager
 package_manager_install_cmd=""

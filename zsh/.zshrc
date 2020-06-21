@@ -2,7 +2,7 @@
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
-export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="$HOME/.cargo/bin:/usr/local/opt/ruby/bin:$PATH"
 
 alias python="/usr/local/bin/python3"
 

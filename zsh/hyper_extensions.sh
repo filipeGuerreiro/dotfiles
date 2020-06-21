@@ -1,0 +1,11 @@
+hyper i hyper-search
+hyper i hyper-font-ligatures
+hyper i hyper-tabs-enhanced
+hyper i hyper-font-ligatures
+hyper i hyper-save-windowstate
+hyper i hyper-material-theme
+hyper i hyperterm-paste
+hyper i hyper-pane
+hyper i hyper-search
+hyper i hyperline
+hyper i hyper-samewd

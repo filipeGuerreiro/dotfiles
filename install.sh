@@ -98,11 +98,13 @@ cp browser/user.js $profile_dir/
 
 # terminal utilities
 if ! command -v pgcli >/dev/null 2>&1; then $package_manager_install_cmd pgcli; fi
-if ! command -v exa >/dev/null 2>&1; then $package_manager_install_cmd exa; fi
-if ! command -v bat >/dev/null 2>&1; then $package_manager_install_cmd bat; fi
-if ! command -v fd >/dev/null 2>&1; then $package_manager_install_cmd fd; fi
+if ! command -v exa >/dev/null 2>&1; then cargo install exa; fi
+if ! command -v bat >/dev/null 2>&1; then cargo install bat; fi
+if ! command -v fd >/dev/null 2>&1; then $package_manager_install_cmd fd-find; fi
 if ! command -v tldr >/dev/null 2>&1; then npm install -g tldr; fi
 if ! command -v fkill >/dev/null 2>&1; then npm install -g fkill-cli; fi
+
+./zsh/hyper-extensions.sh
 
 # media software
 $package_manager_install_cmd vlc

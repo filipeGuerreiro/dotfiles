@@ -6,10 +6,10 @@ module.exports = {
   config: {
     // choose either `'stable'` for receiving highly polished,
     // or `'canary'` for less polished but more frequent updates
-    updateChannel: 'canary',
+    updateChannel: 'stable',
 
     // default font size in pixels for all tabs
-    fontSize: 14,
+    fontSize: 13,
 
     activeTab: 'λ',
 
@@ -149,14 +149,17 @@ module.exports = {
   //   `@company/project`
   //   `project#1.0.1`
   plugins: [
-    "hyper-font-ligatures",
-    "hyper-search",
-    "hyper-pane",
-    "hypercwd",
-    "hyperline",
-    "hyper-save-windowstate",
-    "hyper-material-theme"
   ],
+  hyperline: {
+    plugins: [
+      "hostname",
+      "ip",
+      "memory",
+      "cpu",
+      "network",
+      "battery"
+    ]
+  },
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here

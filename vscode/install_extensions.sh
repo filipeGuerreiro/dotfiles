@@ -47,3 +47,4 @@ $codium --install-extension wingrunr21.vscode-ruby --force
 $codium --install-extension zxh404.vscode-proto3 --force
 $codium --install-extension tabnine.tabnine-vscode --force
 $codium --install-extension wakatime.vscode-wakatime --force
+$codium --install-extension foam.foam-vscode --force

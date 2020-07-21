@@ -2,16 +2,14 @@
 this_dir="$(dirname "$0")"
 cd $this_dir
 
-# Make sure to use zsh
-chsh -s $(which zsh)
-$(which zsh)
-
 # get system's package manager
 package_manager_install_cmd=""
 if command -v pacman >/dev/null 2>&1; then
   package_manager_install_cmd="yay -S --cleanafter --noconfirm "
 elif command -v brew >/dev/null 2>&1; then
   package_manager_install_cmd="brew cask install "
+elif command -v yum >/dev/null 2>&1; then
+  package_manager_install_cmd="yum install -y "
 elif command -v apt-get >/dev/null 2>&1; then
   package_manager_install_cmd="sudo apt-get install -y "
   wget -qO – https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg | sudo apt-key add –
@@ -21,7 +19,7 @@ elif command -v apt-get >/dev/null 2>&1; then
   sudo add-apt-repository --yes https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/
   sudo apt update
 else
-  { echo >&2 "A supported package manager (apt-get, yay, brew) is required.  Aborting."; exit 1; }
+  { echo >&2 "A supported package manager (apt-get, yay, brew, yum) is required.  Aborting."; exit 1; }
 fi
 
 if ! command -v git >/dev/null 2>&1; then $package_manager_install_cmd git; fi
@@ -33,6 +31,13 @@ if ! command -v starship >/dev/null 2>&1; then
   $package_manager_install_cmd starship
   $package_manager_install_cmd ttf-fira-code
 fi
+
+# use zsh
+chsh -s $(which zsh)
+$(which zsh)
+
+# add github fingerprint to known hosts to prevent trust fingerprint prompt
+if [ ! "$(ssh-keygen -F github.com)" ]; then ssh-keyscan github.com >> ~/.ssh/known_hosts 2>/dev/null; fi
 
 cp -r zsh/. ~/.zsh/
 
@@ -47,8 +52,8 @@ cd $this_dir
 # install java
 if ! command -v jenv >/dev/null 2>&1; then
   git clone https://github.com/gcuisinier/jenv.git ~/.jenv
-  $package_manager_install_cmd jdk8-adoptopenjdk
-  $package_manager_install_cmd jdk11-adoptopenjdk
+  $package_manager_install_cmd java-1.8.0-openjdk
+  $package_manager_install_cmd java-1.11.0-openjdk
 
   jdk_install_path="/usr/lib/jvm/"
   if [[ "$OSTYPE" =~ ^darwin ]]; then

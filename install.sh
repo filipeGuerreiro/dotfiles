@@ -32,10 +32,6 @@ if ! command -v starship >/dev/null 2>&1; then
   $package_manager_install_cmd ttf-fira-code
 fi
 
-# use zsh
-chsh -s $(which zsh)
-$(which zsh)
-
 # add github fingerprint to known hosts to prevent trust fingerprint prompt
 if [ ! "$(ssh-keygen -F github.com)" ]; then ssh-keyscan github.com >> ~/.ssh/known_hosts 2>/dev/null; fi
 
@@ -50,10 +46,10 @@ if [ ! -d zsh-autosuggestions ]; then git clone git@github.com:zsh-users/zsh-aut
 cd $this_dir
 
 # install java
-if ! command -v jenv >/dev/null 2>&1; then
+if [ ! command -v jenv >/dev/null 2>&1 ]; then
   git clone https://github.com/gcuisinier/jenv.git ~/.jenv
   $package_manager_install_cmd java-1.8.0-openjdk
-  $package_manager_install_cmd java-1.11.0-openjdk
+  $package_manager_install_cmd java-11-openjdk
 
   jdk_install_path="/usr/lib/jvm/"
   if [[ "$OSTYPE" =~ ^darwin ]]; then
@@ -80,7 +76,7 @@ if ! command -v npm >/dev/null 2>&1; then $package_manager_install_cmd npm; fi
 if ! command -v cargo >/dev/null 2>&1; then $package_manager_install_cmd cargo; fi
 
 # vscode
-if ! command -v code >/dev/null 2>&1; then
+if [! command -v code >/dev/null 2>&1 ]; then
   $package_manager_install_cmd codium
   chmod +x vscode/install_extensions.sh
   ./vscode/install_extensions.sh

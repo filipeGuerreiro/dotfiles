@@ -8,8 +8,8 @@ if command -v pacman >/dev/null 2>&1; then
   package_manager_install_cmd="yay -S --cleanafter --noconfirm "
 elif command -v brew >/dev/null 2>&1; then
   package_manager_install_cmd="brew cask install "
-elif command -v yum >/dev/null 2>&1; then
-  package_manager_install_cmd="yum install -y "
+elif command -v dnf >/dev/null 2>&1; then
+  package_manager_install_cmd="dnf install -y "
 elif command -v apt-get >/dev/null 2>&1; then
   package_manager_install_cmd="sudo apt-get install -y "
   wget -qO – https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg | sudo apt-key add –

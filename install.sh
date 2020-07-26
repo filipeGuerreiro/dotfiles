@@ -99,7 +99,7 @@ $package_manager_install_cmd redshift
 cp redshift/redshift.conf ~/.config/redshift.conf
 
 # browser config
-profile_dir=$(sudo find / -name "*default-release" 2>/dev/null | grep -m 1 mozilla)
+profile_dir=$(sudo find / -name "*default-release" 2>/dev/null | grep -v .cache | grep -m 1 mozilla)
 mkdir $profile_dir/chrome/
 cp browser/userChrome.css $profile_dir/chrome/
 cp browser/user.js $profile_dir/

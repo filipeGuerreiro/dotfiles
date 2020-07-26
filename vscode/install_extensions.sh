@@ -12,7 +12,7 @@ $codium --install-extension aaron-bond.better-comments --force
 $codium --install-extension alexcvzz.vscode-sqlite --force
 $codium --install-extension alygin.vscode-tlaplus --force
 $codium --install-extension bbenoist.Nix --force
-$codium --install-extension BeardedBear.beardedtheme --force
+$codium --install-extension ModoNoob.vscode-hipster-theme --force
 $codium --install-extension betterthantomorrow.calva --force
 $codium --install-extension borkdude.clj-kondo --force
 $codium --install-extension codezombiech.gitignore --force

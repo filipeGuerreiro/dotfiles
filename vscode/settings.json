@@ -8,6 +8,7 @@
     "editor.formatOnSave": true,
     "files.autoSave": "afterDelay",
     "vsicons.dontShowNewVersionMessage": true,
+    "bracket-pair-colorizer-2.colors": ["#D39E17", "#A15DEF", "#3398DB"],
     "sync.autoUpload": false,
     "sync.autoDownload": true,
     "python.jediEnabled": false,

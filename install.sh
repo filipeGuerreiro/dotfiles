@@ -43,8 +43,8 @@ cp -r zsh/. ~/.zsh/
 cd ~/.zsh
 if [ ! -d fast-syntax-highlighting ]; then git clone git@github.com:zdharma/fast-syntax-highlighting.git; fi
 if [ ! -d zsh-autosuggestions ]; then git clone git@github.com:zsh-users/zsh-autosuggestions.git; fi
-
 cd $this_dir
+./zsh/hyper-extensions.sh
 
 # install java
 if [ ! command -v jenv >/dev/null 2>&1 ]; then
@@ -111,8 +111,6 @@ if ! command -v bat >/dev/null 2>&1; then cargo install bat; fi
 if ! command -v fd >/dev/null 2>&1; then $package_manager_install_cmd fd-find; fi
 if ! command -v tldr >/dev/null 2>&1; then npm install -g tldr; fi
 if ! command -v fkill >/dev/null 2>&1; then npm install -g fkill-cli; fi
-
-./zsh/hyper-extensions.sh
 
 # media software
 $package_manager_install_cmd vlc

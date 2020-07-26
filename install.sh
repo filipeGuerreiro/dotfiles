@@ -9,7 +9,9 @@ if command -v pacman >/dev/null 2>&1; then
 elif command -v brew >/dev/null 2>&1; then
   package_manager_install_cmd="brew cask install "
 elif command -v dnf >/dev/null 2>&1; then
-  package_manager_install_cmd="dnf install -y "
+  package_manager_install_cmd="sudo dnf install -y "
+  $package_manager_install_cmd copr enable evana/fira-code-fonts
+  $package_manager_install_cmd fira-code-fonts
 elif command -v apt-get >/dev/null 2>&1; then
   package_manager_install_cmd="sudo apt-get install -y "
   wget -qO – https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg | sudo apt-key add –
@@ -35,10 +37,9 @@ fi
 # add github fingerprint to known hosts to prevent trust fingerprint prompt
 if [ ! "$(ssh-keygen -F github.com)" ]; then ssh-keyscan github.com >> ~/.ssh/known_hosts 2>/dev/null; fi
 
-cp -r zsh/. ~/.zsh/
-
 # add suggestions + syntax highlighting
 mkdir ~/.zsh
+cp -r zsh/. ~/.zsh/
 cd ~/.zsh
 if [ ! -d fast-syntax-highlighting ]; then git clone git@github.com:zdharma/fast-syntax-highlighting.git; fi
 if [ ! -d zsh-autosuggestions ]; then git clone git@github.com:zsh-users/zsh-autosuggestions.git; fi
@@ -55,15 +56,16 @@ if [ ! command -v jenv >/dev/null 2>&1 ]; then
   if [[ "$OSTYPE" =~ ^darwin ]]; then
     jdk_install_path="/Library/Java/JavaVirtualMachines/"
   fi
-  jdk8_install_path=$(find $jdk_install_path -name "*-8*")
+  jdk8_install_path=$(find $jdk_install_path -name "*-1.8*")
   jdk11_install_path=$(find $jdk_install_path -name "*-11*")
   if [[ "$OSTYPE" =~ ^darwin ]]; then
     jdk8_install_path="$jdk8_install_path/Contents/Home"
     jdk11_install_path="$jdk11_install_path/Contents/Home"
   fi
+  mkdir ~/.jenv/versions
   ~/.jenv/bin/jenv add $jdk8_install_path
   ~/.jenv/bin/jenv add $jdk11_install_path
-  ~/.jenv/binjenv global 11.0
+  ~/.jenv/bin/jenv global 11.0
 fi
 
 # install docker

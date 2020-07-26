@@ -43,8 +43,11 @@ cp -r zsh/. ~/.zsh/
 cd ~/.zsh
 if [ ! -d fast-syntax-highlighting ]; then git clone git@github.com:zdharma/fast-syntax-highlighting.git; fi
 if [ ! -d zsh-autosuggestions ]; then git clone git@github.com:zsh-users/zsh-autosuggestions.git; fi
+cp .zsh/.zshrc ..
 cd $this_dir
 ./zsh/hyper-extensions.sh
+curr_user=$(who | awk '{print $1, $8; exit}')
+sudo usermod -s /bin/zsh $curr_user
 
 # install java
 if [ ! command -v jenv >/dev/null 2>&1 ]; then

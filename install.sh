@@ -86,6 +86,11 @@ if [! command -v code >/dev/null 2>&1 ]; then
   cp vscode/settings.json $vscode_dir
 fi
 
+# clojure
+curl -o lein https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
+chmod a+x lein
+mv lein /usr/bin
+
 # power-saving utilities for laptops
 $package_manager_install_cmd tlp tlp-rdw powertop
 

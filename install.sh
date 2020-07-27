@@ -85,7 +85,7 @@ if [! command -v code >/dev/null 2>&1 ]; then
   $package_manager_install_cmd codium
   chmod +x vscode/install_extensions.sh
   ./vscode/install_extensions.sh
-  vscode_dir="$(find / -name 'VSCodium' 2>/dev/null | head -n 1)/User/"
+  vscode_dir="$(sudo find / -name 'VSCodium' 2>/dev/null | head -n 1)/User/"
   cp vscode/settings.json $vscode_dir
 fi
 

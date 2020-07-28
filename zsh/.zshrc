@@ -6,9 +6,6 @@ export PATH="$HOME/.cargo/bin:/usr/local/opt/ruby/bin:$PATH"
 
 alias python="/usr/local/bin/python3"
 
-source $HOME/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-source $HOME/.zsh/completion.zsh
-
 if [[ "$OSTYPE" =~ ^darwin && ! $(launchctl list org.nixos.nix-daemon) ]]; then
   launchctl load /Library/LaunchDaemons/org.nixos.nix-daemon.plist && launchctl start org.nixos.nix-daemon
 fi
@@ -36,6 +33,8 @@ source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $HOME/.zsh/history.zsh
 source $HOME/.zsh/key-bindings.zsh
 source $HOME/.zsh/aliases.zsh
+source $HOME/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source $HOME/.zsh/completion.zsh
 
 # Set Spaceship ZSH as a prompt
 eval "$(starship init zsh)"

@@ -43,9 +43,12 @@ cp -r zsh/. ~/.zsh/
 cd ~/.zsh
 if [ ! -d fast-syntax-highlighting ]; then git clone git@github.com:zdharma/fast-syntax-highlighting.git; fi
 if [ ! -d zsh-autosuggestions ]; then git clone git@github.com:zsh-users/zsh-autosuggestions.git; fi
-mv .zshrc $HOME/
-mv .hyper.js $HOME/
-./hyper-extensions.sh
+cd ..
+mv .zsh/.zshrc .
+mv .zsh/.hyper.js .
+mv .zsh/.config/starship.toml .config/
+chmod +x ./.zsh/hyper_extensions.sh
+./.zsh/hyper-extensions.sh
 cd $this_dir
 curr_user=$(who | awk '{print $1, $8; exit}')
 sudo usermod -s /bin/zsh $curr_user

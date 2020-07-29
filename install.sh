@@ -106,10 +106,10 @@ $package_manager_install_cmd redshift
 cp redshift/redshift.conf ~/.config/redshift.conf
 
 # browser config
-profile_dir=$(sudo find / -name "*default-release" 2>/dev/null | grep -v .cache | grep -m 1 mozilla)
-mkdir $profile_dir/chrome/
-cp browser/userChrome.css $profile_dir/chrome/
-cp browser/user.js $profile_dir/
+browser_dir=$(sudo find / -name "*default-release*" 2>/dev/null | grep -v .cache | grep -v rash | grep -m 1 mozilla)
+mkdir $browser_dir/chrome/
+cp browser/userChrome.css $browser_dir/chrome/
+cp browser/user.js $browser_dir/
 
 # terminal utilities
 if ! command -v pgcli >/dev/null 2>&1; then $package_manager_install_cmd pgcli; fi

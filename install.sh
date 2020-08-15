@@ -51,7 +51,7 @@ mv .zsh/.zshrc .
 mv .zsh/.hyper.js .
 mv .zsh/.config/starship.toml .config/
 chmod +x ./.zsh/hyper_extensions.sh
-./.zsh/hyper-extensions.sh
+./.zsh/hyper_extensions.sh
 cd $this_dir
 curr_user=$(who | awk '{print $1, $8; exit}')
 sudo usermod -s /bin/zsh $curr_user

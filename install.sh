@@ -12,6 +12,9 @@ elif command -v dnf >/dev/null 2>&1; then
   package_manager_install_cmd="sudo dnf install -y "
   $package_manager_install_cmd copr enable evana/fira-code-fonts
   $package_manager_install_cmd fira-code-fonts
+  # for codium
+  sudo rpm --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg
+  printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=gitlab.com_paulcarroty_vscodium_repo\nbaseurl=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/repos/rpms/\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg" |sudo tee -a /etc/yum.repos.d/vscodium.repo
 elif command -v apt-get >/dev/null 2>&1; then
   package_manager_install_cmd="sudo apt-get install -y "
   wget -qO – https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg | sudo apt-key add –
@@ -116,12 +119,24 @@ cp browser/userChrome.css $browser_dir/chrome/
 cp browser/user.js $browser_dir/
 
 # terminal utilities
-if ! command -v pgcli >/dev/null 2>&1; then $package_manager_install_cmd pgcli; fi
-if ! command -v exa >/dev/null 2>&1; then cargo install exa; fi
-if ! command -v bat >/dev/null 2>&1; then cargo install bat; fi
-if ! command -v fd >/dev/null 2>&1; then $package_manager_install_cmd fd-find; fi
-if ! command -v tldr >/dev/null 2>&1; then npm install -g tldr; fi
-if ! command -v fkill >/dev/null 2>&1; then npm install -g fkill-cli; fi
+if [! command -v pgcli >/dev/null 2>&1]; then
+    $package_manager_install_cmd pgcli
+fi
+if [! command -v exa >/dev/null 2>&1]; then
+    cargo install exa
+fi
+if [! command -v bat >/dev/null 2>&]; then
+    cargo install bat
+fi
+if [! command -v fd >/dev/null 2>&1]; then
+    $package_manager_install_cmd fd-find
+fi
+if [! command -v tldr >/dev/null 2>&1]; then
+    npm install -g tldr
+fi
+if [! command -v fkill >/dev/null 2>&1]; then
+    npm install -g fkill-cli
+fi
 
 # media software
 $package_manager_install_cmd vlc

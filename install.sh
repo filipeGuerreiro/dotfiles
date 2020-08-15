@@ -98,6 +98,10 @@ curl -o lein https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/
 chmod a+x lein
 mv lein /usr/bin
 
+# scala
+$package_manager_install_cmd sbt
+$package_manager_install_cmd scala
+
 # power-saving utilities for laptops
 $package_manager_install_cmd tlp tlp-rdw powertop
 

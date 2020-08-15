@@ -99,7 +99,7 @@ fi
 # clojure
 curl -o lein https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
 chmod a+x lein
-mv lein /usr/bin
+sudo mv lein /usr/bin
 
 # scala
 $package_manager_install_cmd sbt

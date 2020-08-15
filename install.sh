@@ -88,7 +88,7 @@ if ! command -v npm >/dev/null 2>&1; then $package_manager_install_cmd npm; fi
 if ! command -v cargo >/dev/null 2>&1; then $package_manager_install_cmd cargo; fi
 
 # vscode
-if [! command -v code >/dev/null 2>&1 ]; then
+if [ [! command -v code >/dev/null 2>&1] || [! command -v codium >/dev/null 2>&1] ]; then
   $package_manager_install_cmd codium
   chmod +x vscode/install_extensions.sh
   ./vscode/install_extensions.sh

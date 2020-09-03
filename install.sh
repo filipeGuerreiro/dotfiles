@@ -138,5 +138,10 @@ if [! command -v fkill >/dev/null 2>&1]; then
     npm install -g fkill-cli
 fi
 
+intellij_conf_dir=$(sudo find / -name "*IdeaIC*" 2>/dev/null | grep .config)
+if [ -z $intellij_conf_dir ]; then
+    unzip intellij/settings.zip -d $intellij_conf_dir
+fi
+
 # media software
 $package_manager_install_cmd vlc

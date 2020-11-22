@@ -1,0 +1,13 @@
+---
+
+- name: Install tmux | package
+  package:
+    name: tmux
+    state: present
+
+- name: Links config file | file
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/roles/tmux/files/tmux.conf"
+    dest: "{{ lookup('env', 'HOME') }}/.tmux.conf"
+    state: link
+    force: yes

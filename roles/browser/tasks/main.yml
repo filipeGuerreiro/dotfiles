@@ -1,0 +1,24 @@
+---
+
+- name: Install Firefox | package
+  package:
+    name: firefox
+    state: present
+
+- name: Find installation directory | command
+  command: echo $(sudo find / -name "*default-release*" 2>/dev/null | grep -v .cache | grep -v rash | grep -m 1 mozilla)
+  register: install_dir
+
+- name: Link userChrome config | file
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/roles/browser/files/userChrome.css"
+    dest: "{{ install_dir }}/chrome/userChrome.css"
+    state: link
+    force: yes
+    
+- name: Link user.js config | file
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/roles/browser/files/user.js"
+    dest: "{{ install_dir }}/user.js"
+    state: link
+    force: yes

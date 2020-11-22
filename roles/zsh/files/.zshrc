@@ -6,10 +6,6 @@ export PATH="$HOME/.cargo/bin:/usr/local/opt/ruby/bin:$PATH"
 
 alias python="/usr/local/bin/python3"
 
-if [[ "$OSTYPE" =~ ^darwin && ! $(launchctl list org.nixos.nix-daemon) ]]; then
-  launchctl load /Library/LaunchDaemons/org.nixos.nix-daemon.plist && launchctl start org.nixos.nix-daemon
-fi
-
 # Initialize the completion system
 autoload -Uz compinit
 

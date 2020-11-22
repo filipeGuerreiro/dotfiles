@@ -1,0 +1,6 @@
+---
+
+- name: Install vlc | package
+  package:
+    name: vlc
+    state: present

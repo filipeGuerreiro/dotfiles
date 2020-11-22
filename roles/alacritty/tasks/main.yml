@@ -1,0 +1,13 @@
+---
+
+- name: Install allacrity | package
+  package:
+    name: alacritty
+    state: present
+
+- name: Links config file | file
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/roles/alacritty/files/alacritty.yml"
+    dest: "{{ lookup('env', 'HOME') }}/.config/alacritty/alacritty.yml"
+    state: link
+    force: yes

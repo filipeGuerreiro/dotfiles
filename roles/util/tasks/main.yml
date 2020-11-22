@@ -1,0 +1,64 @@
+---
+
+## Package managers
+- name: Install cargo | package
+  package:
+    name: cargo
+    state: present
+
+- name: Install npm | package
+  package:
+    name: npm
+    state: present
+
+## Command line utilities
+- name: Install exa | raw
+  raw: cargo install exa
+
+- name: Install bat | raw
+  raw: cargo install bat
+
+- name: Install tldr | raw
+  raw: npm install -g tldr
+
+- name: Install fkill | raw
+  raw: npm install -g fkill-cli
+
+## Programming languages + build tools
+- name: Install python | package
+  package:
+    name: python
+    state: present
+
+- name: Install ruby | package
+  package:
+    name: ruby
+    state: present
+
+- name: Download jenv | git
+  git:
+    repo: 'https://github.com/gcuisinier/jenv.git'
+    dest: "{{ lookup('env', 'HOME') }}/.jenv"
+
+
+
+- name: Install scala | package
+  package:
+    name: scala
+    state: present
+
+- name: Install sbt | package
+  package:
+    name: sbt
+    state: present
+
+- name: Install clojure | package
+  package:
+    name: clojure
+    state: present
+
+- name: Install lein | get_url
+  get_url:
+    url: https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
+    dest: /usr/bin/lein
+    mode: '0555'

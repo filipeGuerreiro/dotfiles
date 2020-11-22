@@ -26,5 +26,6 @@
         "**/.settings": true,
         "**/.factorypath": true
     },
-    "java.requirements.JDK11Warning": false
+    "java.requirements.JDK11Warning": false,
+    "tabnine.experimentalAutoImports": true
 }

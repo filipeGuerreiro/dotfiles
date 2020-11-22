@@ -1,0 +1,13 @@
+---
+
+- name: Install redshift | package
+  package:
+    name: redshift
+    state: present
+
+- name: Link config file | file
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/roles/redshift/files/redshift.conf"
+    dest: "{{ lookup('env', 'HOME') }}/.config/redshift.conf"
+    state: link
+    force: yes

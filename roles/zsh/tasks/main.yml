@@ -1,0 +1,79 @@
+---
+
+- name: Installs zsh | apt
+  become: yes
+  become_user: root
+  apt:
+    name: zsh
+    state: present
+
+- name: Installs curl | apt
+  become: yes
+  become_user: root
+  apt:
+    name: curl
+    state: present
+
+- name: Sets zsh as default shell for my user | command
+  become: yes
+  become_user: root
+  command: chsh -s /bin/zsh {{ lookup('env' 'USER') }}
+  register: zsh_for_user
+  failed_when: zsh_for_user.rc >= 1
+  changed_when: zsh_for_user.rc == 0
+
+- name: Links .zshrc file | file
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/roles/zsh/files/.zshrc"
+    dest: "{{ lookup('env', 'HOME') }}/.zshrc"
+    state: link
+    force: yes
+
+- name: Removes zsh config directory
+  file:
+    path: "{{ lookup('env', 'HOME') }}/.zshrc"
+    state: absent
+
+- name: Links zsh config files
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/roles/zsh/files/.zsh"
+    dest: "{{ lookup('env', 'HOME') }}/.zsh"
+    state: link
+    force: yes
+
+- name: Download syntax highlighting
+  git:
+    repo: 'https:/github.com/zdharma/fast-syntax-highlighting.git'
+    dest: "{{ lookup('env', 'HOME') }}/.zsh/fast-syntax-highlighting"
+
+- name: Download autosuggestions
+  git:
+    repo: 'https:/github.com/zsh-users/zsh-autosuggestions.git'
+    dest: "{{ lookup('env', 'HOME') }}/.zsh/zsh-autosuggestions"
+
+- name: Install starship | package
+  package:
+    name: starship
+    state: present
+
+- name: Links starship config | file
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/roles/zsh/files/starship.toml"
+    dest: "{{ lookup('env', 'HOME') }}/.config/starship.toml"
+    state: link
+    force: yes
+
+- name: Install pgcli | package
+  package: 
+    name: pgcli
+    state: present
+
+- name: Install pgcli | package
+  package: 
+    name: pgcli
+    state: present
+
+- name: Install ttf-fira-code | package
+  package: 
+    name: ttf-fira-code
+    state: present

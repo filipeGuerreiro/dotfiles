@@ -1,0 +1,20 @@
+---
+
+- name: Install package | package
+  package:
+    name: codium
+    state: present
+
+- name: Find installation directory | command
+  command: echo $(sudo find / -name 'VSCodium' 2>/dev/null | head -n 1)/User/
+  register: install_dir
+
+- name: Link config file | file
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/roles/code/files/settings.json"
+    dest: "{{ install_dir }}/settings.json"
+    state: link
+    force: yes
+
+- name: Install extensions
+  script: "{{ lookup('env', 'ROOTDIR') }}/roles/code/files/install_extensions.sh"

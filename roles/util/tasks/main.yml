@@ -40,7 +40,7 @@
     repo: 'https://github.com/gcuisinier/jenv.git'
     dest: "{{ lookup('env', 'HOME') }}/.jenv"
 
-
+## TODO install java from ansible-galaxy roles
 
 - name: Install scala | package
   package:

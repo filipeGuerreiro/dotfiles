@@ -26,6 +26,7 @@ fi
 # Installs ansible
 $INSTALL_CMD ansible
 ansible-galaxy install geerlingguy.java
+ansible-galaxy install iancleary.jetbrains_mono
 
 # Runs Ansible playbook using our user.
 ansible-playbook -i "$HOSTS" "$PLAYBOOK" --ask-become-pass

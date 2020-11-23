@@ -1,5 +1,10 @@
 - name: Set up local workstation
   hosts: local
+  roles:
+    - role: geerlingguy.java
+      java_packages:
+        - java-1.8.0-openjdk
+    - role: iancleary.jetbrains_mono
 
 - import_playbook: zsh.yml
 - import_playbook: alacritty.yml

@@ -47,23 +47,23 @@ font:
   # Normal font face - Also used to draw glyphs on tmux & VIM
   normal:
     # Font name
-    family: Fira Mono
+    family: JetBrains Mono
     # Font face
     style: Retina
 
   # Bold font face
   bold:
-    family: Fira Mono
+    family: JetBrains Mono
     style: Bold
 
   # Italic font face
   italic:
-    family: Fira Mono
+    family: JetBrains Mono
     style: Italic
 
   # Bold italic font face
   bold_italic:
-    family: Fira Mono
+    family: JetBrains Mono
     style: Italic
 
   # Font size

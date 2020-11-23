@@ -6,7 +6,7 @@
     "editor.formatOnPaste": true,
     "editor.defaultFormatter": "EditorConfig.EditorConfig",
     "editor.formatOnSave": true,
-    "editor.fontFamily": "'Fira Code', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontFamily": "'JetBrains Mono', 'Fira Code', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.fontLigatures": true,
     "files.autoSave": "afterDelay",
     "vsicons.dontShowNewVersionMessage": true,
@@ -27,5 +27,6 @@
         "**/.factorypath": true
     },
     "java.requirements.JDK11Warning": false,
-    "tabnine.experimentalAutoImports": true
+    "tabnine.experimentalAutoImports": true,
+    "files.insertFinalNewline": true
 }

@@ -27,6 +27,7 @@ fi
 $INSTALL_CMD ansible
 ansible-galaxy install geerlingguy.java
 ansible-galaxy install iancleary.jetbrains_mono
+ansible-galaxy install ontic.fonts
 
 # Runs Ansible playbook using our user.
 ansible-playbook -i "$HOSTS" "$PLAYBOOK" --ask-become-pass

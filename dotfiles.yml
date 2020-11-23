@@ -5,6 +5,9 @@
       java_packages:
         - java-1.8.0-openjdk
     - role: iancleary.jetbrains_mono
+    - role: ontic.fonts
+      src: "https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Regular/complete/JetBrains%20Mono%20Regular%20Nerd%20Font%20Complete%20Mono.ttf"
+      name: "JetBrains Mono Regular Nerd Font Complete Mono"
 
 - import_playbook: zsh.yml
 - import_playbook: alacritty.yml

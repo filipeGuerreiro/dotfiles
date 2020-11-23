@@ -32,8 +32,13 @@
 
 - name: Install ruby | package
   package:
-    name: ruby
+    name: ruby-devel
     state: present
+
+- name: Install colorls
+  community.general.gem:
+    name: colorls
+    state: latest
 
 - name: Download jenv | git
   git:

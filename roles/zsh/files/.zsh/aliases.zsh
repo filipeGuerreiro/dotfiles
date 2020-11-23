@@ -1,4 +1,5 @@
-alias ls='exa -ahl -s type'                             # colorize `ls` output
+#alias ls='exa -ahl -s type'                             # colorize `ls` output
+alias ls='colorls -a --sf --sd' 
 alias cat='bat'
 alias find='fd'
 alias man='tldr'
@@ -11,6 +12,11 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias less='less -R'
 alias g='git'
+
+alias t="tmux"
+alias ta="t a -t"
+alias tls="t ls"
+alias tn="t new -t"
 
 alias rm='rm -i'                              # confirm removal
 alias cp='cp -i'                              # confirm copy

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -e
+set +e
 
 # Dotfiles' project root directory
 ROOTDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -13,7 +13,7 @@ INSTALL_CMD=""
 if command -v pacman >/dev/null 2>&1; then
   INSTALL_CMD="yay -S --cleanafter --noconfirm "
 elif command -v brew >/dev/null 2>&1; then
-  INSTALL_CMD="brew cask install "
+  INSTALL_CMD="brew install "
 elif command -v dnf >/dev/null 2>&1; then
   INSTALL_CMD="sudo dnf install -y "
 elif command -v apt-get >/dev/null 2>&1; then

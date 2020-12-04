@@ -9,11 +9,20 @@
       src: "https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Regular/complete/JetBrains%20Mono%20Regular%20Nerd%20Font%20Complete%20Mono.ttf"
       name: "JetBrains Mono Regular Nerd Font Complete Mono"
 
-- import_playbook: zsh.yml
-- import_playbook: alacritty.yml
-- import_playbook: tmux.yml
-- import_playbook: code.yml
-- import_playbook: util.yml
-- import_playbook: browser.yml
-- import_playbook: media.yml
-- import_playbook: redshift.yml
+
+- name: Setup terminal
+  hosts: local
+  become: yes
+  tasks:
+    - import_role:
+        name: zsh
+    - import_role:
+        name: alacritty
+    - import_role:
+        name: tmux
+
+#- import_playbook: code.yml
+#- import_playbook: util.yml
+#- import_playbook: browser.yml
+#- import_playbook: media.yml
+#- import_playbook: redshift.yml

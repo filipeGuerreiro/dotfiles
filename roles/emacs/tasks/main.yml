@@ -1,0 +1,15 @@
+---
+
+- name: Links emacs daemon config | file
+  become: yes
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/roles/emacs/emacsd.service"
+    dest: "/etc/systemd/system/emacsd.service"
+    state: link
+    force: yes
+
+- name: Enable emacsd service | service
+  service:
+    name: emacsd
+    enabled: yes
+    state: started

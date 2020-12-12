@@ -13,3 +13,20 @@
     name: emacsd
     enabled: yes
     state: started
+
+- name: Install doom emacs | shell
+  shell: |
+    git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
+    ~/.emacs.d/bin/doom install
+
+- name: Removes doom config directory | file
+  file:
+    path: "{{ lookup('env', 'HOME') }}/.doom.d"
+    state: absent
+
+- name: Copy over doom configs | file
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/roles/emacs/files/doom.d"
+    dest: "{{ lookup('env', 'HOME') }}/.doom.d"
+    state: link
+    force: yes

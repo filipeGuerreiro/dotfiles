@@ -68,6 +68,11 @@
     name: pgcli
     state: present
 
+- name: Install fzf | package
+  package:
+    name: fzf
+    state: present
+
 - name: Install pgcli | package
   package: 
     name: pgcli

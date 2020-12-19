@@ -30,3 +30,8 @@
     dest: "{{ lookup('env', 'HOME') }}/.doom.d"
     state: link
     force: yes
+
+- name: Install wakatime | pip
+  pip:
+    name: wakatime
+  become: yes

@@ -1,37 +1,17 @@
 ---
+- name: Install emacs | package
+  package:
+    name: "emacs"
+    state: "present"
 
-- name: Links emacs daemon config | file
-  become: yes
-  file:
-    src: "{{ lookup('env', 'ROOTDIR') }}/roles/emacs/emacsd.service"
-    dest: "/etc/systemd/system/emacsd.service"
-    state: link
-    force: yes
-
-- name: Enable emacsd service | service
-  service:
-    name: emacsd
-    enabled: yes
-    state: started
-
-- name: Install doom emacs | shell
+- name: Install spacemacs | shell
   shell: |
-    git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
-    ~/.emacs.d/bin/doom install
+    git clone --depth 1 https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
-- name: Removes doom config directory | file
+- name: Copy over config file | file
   file:
-    path: "{{ lookup('env', 'HOME') }}/.doom.d"
-    state: absent
-
-- name: Copy over doom configs | file
-  file:
-    src: "{{ lookup('env', 'ROOTDIR') }}/roles/emacs/files/doom.d"
-    dest: "{{ lookup('env', 'HOME') }}/.doom.d"
+    src: "{{ lookup('env', 'ROOTDIR') }}/roles/emacs/files/spacemacs"
+    dest: "{{ lookup('env', 'HOME') }}/.spacemacs"
     state: link
     force: yes
-
-- name: Install wakatime | pip
-  pip:
-    name: wakatime
-  become: yes
+...

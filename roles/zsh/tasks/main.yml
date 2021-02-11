@@ -14,6 +14,11 @@
     name: curl
     state: present
 
+- name: Installs fzf | package
+  package:
+    name: fzf
+    state: present
+
 - name: Sets zsh as default shell for my user | command
   become: yes
   become_user: root
@@ -64,7 +69,7 @@
     force: yes
 
 - name: Install pgcli | package
-  package: 
+  package:
     name: pgcli
     state: present
 
@@ -74,11 +79,11 @@
     state: present
 
 - name: Install pgcli | package
-  package: 
+  package:
     name: pgcli
     state: present
 
 - name: Install ttf-fira-code | package
-  package: 
+  package:
     name: ttf-fira-code
     state: present
